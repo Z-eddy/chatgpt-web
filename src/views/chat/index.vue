@@ -16,6 +16,7 @@ import { useBasicLayout } from '@/hooks/useBasicLayout'
 import { useChatStore, usePromptStore } from '@/store'
 import { fetchChatAPIProcess } from '@/api'
 import { t } from '@/locales'
+import Warning from "@/views/Warning.vue";
 
 let controller = new AbortController()
 
@@ -467,6 +468,7 @@ onUnmounted(() => {
 </script>
 
 <template>
+	<Warning class="MyWarning"/>
   <div class="flex flex-col w-full h-full">
     <HeaderComponent
       v-if="isMobile"
@@ -558,3 +560,10 @@ onUnmounted(() => {
     </footer>
   </div>
 </template>
+
+<style scoped>
+.MyWarning{
+	text-align: center;
+	color: #98c379;
+}
+</style>
